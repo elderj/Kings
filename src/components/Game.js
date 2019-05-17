@@ -79,7 +79,7 @@ class Game extends Component {
             suit={this.state.suit}
           />
         </Modal>
-        {this.state.cardsRemaining != 0 ? (
+        {this.state.cardsRemaining !== 0 ? (
           <ul class="circle-container">
             {this.drawCards()}
             {/* Adds something in the middle */}

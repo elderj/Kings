@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { rules } from "../datautils/data";
 import "../styles/App.scss";
 
