@@ -1,0 +1,57 @@
+/// Mixin to place items on a circle
+/// @author Hugo Giraudel
+/// @author Ana Tudor
+/// @param {Integer} $item-count - Number of items on the circle
+/// @param {Length} $circle-size - Large circle size
+/// @param {Length} $item-size - Single item size
+@mixin on-circle($item-count, $circle-size, $item-size) {
+  position: relative;
+  width: $circle-size;
+  height: $circle-size;
+  border-radius: 50%;
+  padding: 0px;
+  list-style: none;
+
+  > * {
+    display: block;
+    position: absolute;
+
+    //Physically position the circle down or over a percentage
+    top: 35%;
+    left: 40%;
+
+    // This was causing the issue with hover overlap, since images are not squares
+    // height: $item-size;
+    width: $item-size;
+
+    //Arc of the circle (like a protractor)
+    $angle: (360 / $item-count);
+    // rotates the circle itself
+    $rot: 0;
+
+    @for $i from 1 through $item-count {
+      &:nth-of-type(#{$i}) {
+        transform: rotate($rot * 1deg) translate($circle-size / 2);
+        z-index: $i + 1;
+      }
+      $rot: $rot + $angle;
+    }
+  }
+}
+
+.circle-container {
+  @include on-circle($item-count: 52, $circle-size: 20em, $item-size: 80px);
+  margin: 5em auto 0;
+
+  img {
+    display: block;
+    max-width: 100%;
+    filter: grayscale(0%);
+    transition: 0.15s;
+    border-radius: 10%;
+    &:hover {
+      filter: hue-rotate(200deg);
+      border: solid 1px tomato;
+    }
+  }
+}

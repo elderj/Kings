@@ -1,0 +1,60 @@
+.App {
+  text-align: center;
+}
+
+#parent {
+  display: flex;
+  width: 150px;
+  margin-top: 45px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#child {
+  flex: 1;
+}
+
+.beerCanImage {
+  width: 25px;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+body {
+  /* Background pattern from Toptal Subtle Patterns */
+  background-image: url("../images/squares.png");
+  background-repeat: repeat;
+}
+
+.modal-content {
+  /* Background pattern from Toptal Subtle Patterns */
+  background-image: url("../images/congruent_pentagon.png");
+  background-repeat: repeat;
+}
+
+/* Font Styling */
+.quicksand-text {
+  font-family: "Quicksand", sans-serif;
+}
+.pacifio-text {
+  font-family: "Pacifico", cursive;
+}
+
+// Fancy Color Transition, sourced from:
+// https://codepen.io/caseycallow/pen/yMNqPY
+.gradient-text {
+  color: #f35626;
+  background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: hue 10s infinite linear;
+}
+@-webkit-keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+  to {
+    -webkit-filter: hue-rotate(-360deg);
+  }
+}
